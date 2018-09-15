@@ -41,30 +41,49 @@
             background-size: cover;
             position: relative;
         }
+        #gameContainer {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+        #controls {
+            position: absolute;
+            top: 500px;
+            left: 30px;
+            width: 640px;
+            text-align: center;
+            color: white;
+        }
     </style>
 </head>
 <body>
-<div style="position: absolute; top: 30px; left: 30px;" id="gameContainer"></div>
+    <div id="gameContainer"></div>
+    <div id="controls">
+        <span>Lopen: Pijltje links/rechts<span><br/>
+        <span>Verdedigen: Pijltje omhoog<span><br/>
+        <span>Level opnieuw: R van Restart<span><br/>
+        <span>Wapen weg: Pijltje naar beneden<span><br/>
+    </div>
     
-<script type="text/javascript">
+    <script type="text/javascript">
 
-window.onload = function() {
+    window.onload = function() {
 
-	var game = new Phaser.Game(640, 400, Phaser.AUTO, 'gameContainer',null,false,false);
-	
-    game.state.add('Boot', PrinceJS.Boot);
-	game.state.add('Preloader', PrinceJS.Preloader);
-	game.state.add('Game', PrinceJS.Game);
-    game.state.add('Title', PrinceJS.Title);
-    game.state.add('EndTitle', PrinceJS.EndTitle);
-    game.state.add('Credits', PrinceJS.Credits);
-    game.state.add('Cutscene', PrinceJS.Cutscene);
+    	var game = new Phaser.Game(640, 400, Phaser.AUTO, 'gameContainer',null,false,false);
+    	
+        game.state.add('Boot', PrinceJS.Boot);
+    	game.state.add('Preloader', PrinceJS.Preloader);
+    	game.state.add('Game', PrinceJS.Game);
+        game.state.add('Title', PrinceJS.Title);
+        game.state.add('EndTitle', PrinceJS.EndTitle);
+        game.state.add('Credits', PrinceJS.Credits);
+        game.state.add('Cutscene', PrinceJS.Cutscene);
 
-	game.state.start('Boot');
+    	game.state.start('Boot');
 
-};
+    };
 
-</script>
+    </script>
 
 </body>
 </html>
