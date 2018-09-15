@@ -34,23 +34,17 @@
     <script src="src/tiles/Chopper.js"></script>
     <style>
         body {
-            background-image: url(img/prince_back_1920.jpg);
-        }
-
-        @media screen and (min-width: 1300px) {
-            body {
-                background-image: url(img/prince_back_1920.jpg);
-            }
+            background: url(img/marley.jpg) no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            position: relative;
         }
     </style>
 </head>
 <body>
-    <div style="float: right; margin-top: 10px; margin-right: 20px;" >
-        <a href="http://ultrabolido.wordpress.com"><img src="img/wordpress.png" width="50px" height="50px" border="0"/></a>
-        <br/>
-        <a href="http://twitter.com/ultrabolido"><img src="img/twitter.png" width="50px" height="50px" border="0"/></a>
-    </div>
-<div style="padding-left: 112px; padding-top: 183px;" id="gameContainer"></div>
+<div style="position: absolute; top: 30px; left: 30px;" id="gameContainer"></div>
     
 <script type="text/javascript">
 
