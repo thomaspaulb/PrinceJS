@@ -30,17 +30,30 @@ PrinceJS.Marley.TOP_SPEED = 33;
 PrinceJS.Marley.prototype = Object.create(PrinceJS.Actor.prototype);
 PrinceJS.Marley.prototype.constructor = PrinceJS.Marley;
 
+PrinceJS.Marley.prototype.updateActor = function() {
+    
+    this.processCommand();
+    this.updateCharPosition();
+
+    if ( this.owner.room == this.room ) {
+        if ( (this.owner.charX < this.charX) && (this.faceR()) )
+            this.turn();
+        if ( (this.owner.charX > this.charX) && (this.faceL()) )
+            this.turn();
+    }
+    
+};
+
+
 PrinceJS.Marley.prototype.comehere = function() {
 
 	if (!this.coming) {
-		console.log('excitement', this.excitement);
 		this.coming = true;
 		if (this.excitement < 1) {
 			this.action = 'walk';
 		} else {
 			this.action = 'run';		
 		}
-		console.log('increasing excitement');
 		this.excitement += 1;
 	}
 };

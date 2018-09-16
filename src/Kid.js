@@ -142,11 +142,6 @@ PrinceJS.Kid.prototype.addLive = function() {
 
 
 PrinceJS.Kid.prototype.updateActor = function() {
-
-    if ( (this.charX < this.marley.charX) && (this.marley.faceR()) )
-        this.marley.turn();
-    if ( (this.charX > this.marley.charX) && (this.marley.faceL()) )
-        this.marley.turn();
     
     this.updateBehaviour();
     this.processCommand();
