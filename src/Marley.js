@@ -2,6 +2,8 @@ PrinceJS.Marley = function (game, level, location, direction, room) {
 
     this.level = level;
     this.room = room;
+    this.excitement = 0;
+    this.coming = false;
     
     this.charBlockX = location % 10;
     this.charBlockY = Math.floor( location / 10);
@@ -28,20 +30,31 @@ PrinceJS.Marley.TOP_SPEED = 33;
 PrinceJS.Marley.prototype = Object.create(PrinceJS.Actor.prototype);
 PrinceJS.Marley.prototype.constructor = PrinceJS.Marley;
 
-PrinceJS.Marley.prototype.startwalk = function() {
-    
-    this.action = 'walk';
-    
+PrinceJS.Marley.prototype.comehere = function() {
+
+	if (!this.coming) {
+		console.log('excitement', this.excitement);
+		this.coming = true;
+		if (this.excitement < 1) {
+			this.action = 'walk';
+		} else {
+			this.action = 'run';		
+		}
+		console.log('increasing excitement');
+		this.excitement += 1;
+	}
 };
 
 PrinceJS.Marley.prototype.turn = function() {
     
     this.action = 'turn';
+	this.excitement = 0;
     
 };
 
 PrinceJS.Marley.prototype.stop = function() {
     
     this.action = 'stand';
+    this.coming = false;
     
 };

@@ -195,7 +195,7 @@ PrinceJS.Kid.prototype.updateBehaviour = function() {
     switch (this.action) {
     
             case 'stand':
-                this.marley.action = 'stand';
+                this.marley.stop();
                 if ( !this.flee && ( this.opponent != null ) ) return this.tryEngarde(); 
                 if ( this.flee && this.keyS() ) return this.tryEngarde();
                 if ( this.keyL() && this.faceR() ) return this.turn();
@@ -231,6 +231,7 @@ PrinceJS.Kid.prototype.updateBehaviour = function() {
                 break;
             
             case 'stoop':
+                this.marley.comehere();
                 if ( this.pickupSword && this.frameID(109) ) return this.gotSword();
                 if ( this.pickupPotion && this.frameID(109) ) return this.drinkPotion();
                 if ( !this.keyD() && this.frameID(109) ) return this.standup();
@@ -779,7 +780,7 @@ PrinceJS.Kid.prototype.keyU = function() {
 };
 
 PrinceJS.Kid.prototype.keyD = function() {
-    
+
     return this.cursors.down.isDown;
     
 };
@@ -812,7 +813,6 @@ PrinceJS.Kid.prototype.standjump = function() {
 };
 
 PrinceJS.Kid.prototype.startrun = function() {
-    this.marley.startwalk();
     if ( this.nearBarrier() ) return this.step();
     this.action = 'startrun';
 };

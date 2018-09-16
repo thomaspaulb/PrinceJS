@@ -60,6 +60,7 @@ PrinceJS.Game.prototype = {
             json.prince.room
         );
         this.kid.marley = this.marley;
+        this.marley.owner = this.kid;
 
         this.kid.onChangeRoom.add(this.setupCamera, this);
         this.kid.onChangeRoom.add(this.checkForOpponent, this);
