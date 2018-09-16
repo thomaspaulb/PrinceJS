@@ -1,0 +1,48 @@
+{"frames": {
+"marley-0":
+{
+	"frame": {"x":0,"y":0,"w":40,"h":28},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":40,"h":28},
+	"sourceSize": {"w":40,"h":28},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"marley-1":
+{
+	"frame": {"x":40,"y":0,"w":40,"h":28},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":40,"h":28},
+	"sourceSize": {"w":40,"h":28},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"marley-2":
+{
+	"frame": {"x":80,"y":0,"w":40,"h":28},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":40,"h":28},
+	"sourceSize": {"w":40,"h":28},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"marley-3":
+{
+	"frame": {"x":120,"y":0,"w":40,"h":28},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":40,"h":28},
+	"sourceSize": {"w":40,"h":28},
+	"pivot": {"x":0.5,"y":0.5}
+}
+},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "marley.png",
+	"format": "RGBA8888",
+	"size": {"w":160,"h":28},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:0e206dfd46b0fbf7a690fca2ef9cb9ea:8a34bf871ddc69c132e67387442e8903:7827590bd555cd2739a94d349adba279$"
+}
+}

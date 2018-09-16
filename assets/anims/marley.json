@@ -1,0 +1,39 @@
+{ 
+    "sequence": {
+        
+        "stand": [
+            
+            { "cmd": 0, "p1": 0  },
+            { "cmd": 255, "p1": "stand", "p2": 0 }
+            
+        ],
+
+        "turn": [
+
+            { "cmd": 254           },
+            { "cmd": 255, "p1": "stand", "p2": 0 }
+
+        ],
+
+        "walk": [
+            
+            { "cmd": 0, "p1": 0  },
+            { "cmd": 0, "p1": 1  },
+            { "cmd": 0, "p1": 2  },
+            { "cmd": 0, "p1": 3  },
+            { "cmd": 255, "p1": "walk", "p2": 0 }
+            
+        ]
+    
+    },
+    
+    "framedef": [
+        
+        { "fdx": 0 , "fdy": 0  , "fcheck": "0x00" },
+        { "fdx": 0 , "fdy": 0  , "fcheck": "0x44" },
+        { "fdx": 0 , "fdy": 0  , "fcheck": "0x44" }, 
+        { "fdx": 0 , "fdy": 2  , "fcheck": "0x44" }
+        
+    ]
+
+}

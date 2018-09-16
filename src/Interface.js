@@ -69,6 +69,20 @@ PrinceJS.Interface.prototype = {
         this.layer.addChild(this.playerHPs[num]);
         
     },
+
+    setMarleyLive: function(actor) {
+        
+        this.oppHPActive = actor.health;
+        for (var i=actor.health; i > 0; i--) {
+         
+            this.oppHPs[i - 1] =  this.game.add.sprite(PrinceJS.SCREEN_WIDTH - i*7 + 1,2,'general', actor.charName + '-live');
+            this.layer.addChild(this.oppHPs[i - 1]);
+            
+        }
+        
+        actor.onDamageLive.add(this.damageOpponentLive, this);
+        
+    },
     
     setOpponentLive: function(actor) {
         

@@ -42,8 +42,6 @@ PrinceJS.Kid = function (game, level, location, direction, room) {
     this.allowBlock = true;
     this.allowStrike = true;
     
-    //this.onChangeRoom.add(this.followOpponent,this);
-
 };
 
 PrinceJS.Kid.prototype = Object.create(PrinceJS.Fighter.prototype);
@@ -144,6 +142,11 @@ PrinceJS.Kid.prototype.addLive = function() {
 
 
 PrinceJS.Kid.prototype.updateActor = function() {
+
+    if ( (this.charX < this.marley.charX) && (this.marley.faceR()) )
+        this.marley.turn();
+    if ( (this.charX > this.marley.charX) && (this.marley.faceL()) )
+        this.marley.turn();
     
     this.updateBehaviour();
     this.processCommand();
@@ -192,6 +195,7 @@ PrinceJS.Kid.prototype.updateBehaviour = function() {
     switch (this.action) {
     
             case 'stand':
+                this.marley.action = 'stand';
                 if ( !this.flee && ( this.opponent != null ) ) return this.tryEngarde(); 
                 if ( this.flee && this.keyS() ) return this.tryEngarde();
                 if ( this.keyL() && this.faceR() ) return this.turn();
@@ -808,10 +812,9 @@ PrinceJS.Kid.prototype.standjump = function() {
 };
 
 PrinceJS.Kid.prototype.startrun = function() {
-    
+    this.marley.startwalk();
     if ( this.nearBarrier() ) return this.step();
     this.action = 'startrun';
-    
 };
 
 PrinceJS.Kid.prototype.runturn = function() {

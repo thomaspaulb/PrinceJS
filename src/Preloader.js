@@ -10,6 +10,7 @@ PrinceJS.Preloader.prototype = {
         text.anchor.setTo(0.5,0.5);
         
         this.load.atlasJSONHash('kid','assets/gfx/kid.png','assets/gfx/kid.json');
+        this.load.atlasJSONHash('marley','assets/gfx/marley.png','assets/gfx/marley.json');
         this.load.atlasJSONHash('princess','assets/gfx/princess.png','assets/gfx/princess.json');
         this.load.atlasJSONHash('vizier','assets/gfx/vizier.png','assets/gfx/vizier.json');
         this.load.atlasJSONHash('mouse','assets/gfx/mouse.png','assets/gfx/mouse.json');
@@ -24,6 +25,7 @@ PrinceJS.Preloader.prototype = {
         this.load.atlasJSONHash('title','assets/gfx/title.png','assets/gfx/title.json');
         this.load.atlasJSONHash('cutscene','assets/gfx/cutscene.png','assets/gfx/cutscene.json');
         this.load.json('kid-anims','assets/anims/kid.json');
+        this.load.json('marley-anims','assets/anims/marley.json');
         this.load.json('sword-anims','assets/anims/sword.json');
         this.load.json('fighter-anims','assets/anims/fighter.json');
         this.load.json('princess-anims','assets/anims/princess.json');

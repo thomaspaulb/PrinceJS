@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>PrinceJS - An HTML5 port of Prince of Persia</title>
-	<script src="lib/phaser.min.js"></script>
+	<script src="lib/phaser.js"></script>
 	<script src="src/Boot.js"></script>
 	<script src="src/Preloader.js"></script>
 	<script src="src/Game.js"></script>
@@ -17,6 +17,7 @@
     <script src="src/LevelBuilder.js"></script>
     <script src="src/Actor.js"></script>
     <script src="src/Fighter.js"></script>
+    <script src="src/Marley.js"></script>
     <script src="src/Enemy.js"></script>
     <script src="src/Kid.js"></script>
     <script src="src/Interface.js"></script>
@@ -32,6 +33,7 @@
     <script src="src/tiles/Potion.js"></script>
     <script src="src/tiles/Sword.js"></script>
     <script src="src/tiles/Chopper.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tooltip-js@3.0.0/dist/tooltip-min.js"></script>
     <style>
         body {
             background: url(img/marley.jpg) no-repeat center center fixed; 
@@ -41,6 +43,14 @@
             background-size: cover;
             position: relative;
         }
+        html, body {
+            margin: 0; 
+            height: 100%; 
+            overflow: hidden
+        }
+        body {
+            position: relative;
+        }
         #gameContainer {
             position: absolute;
             top: 30px;
@@ -48,11 +58,22 @@
         }
         #controls {
             position: absolute;
-            top: 500px;
+            bottom: 50px;
             left: 30px;
             width: 640px;
             text-align: center;
             color: white;
+        }
+        #help {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            font-size: 30px;         
         }
     </style>
 </head>
@@ -60,10 +81,12 @@
     <div id="gameContainer"></div>
     <div id="controls">
         <span>Lopen: Pijltje links/rechts<span><br/>
-        <span>Verdedigen: Pijltje omhoog<span><br/>
+        <span>Springen of Verdedigen: Pijltje omhoog<span><br/>
+        <span>Bukken of Wapen weg: Pijltje naar beneden<span><br/>
+        <span>Steken: Shift<span><br/>
         <span>Level opnieuw: R van Restart<span><br/>
-        <span>Wapen weg: Pijltje naar beneden<span><br/>
     </div>
+    <div id="help" class="help">?</div>
     
     <script type="text/javascript">
 
@@ -81,6 +104,13 @@
 
     	game.state.start('Boot');
 
+        // var help = document.getElementById('help');
+        // var tooltip = new Tooltip("help", {
+        //     placement: 'top',
+        //     title: "Top",
+        //     trigger: "click",
+        // });
+        // tooltip.show();
     };
 
     </script>

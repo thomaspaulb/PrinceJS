@@ -94,6 +94,7 @@ PrinceJS.Actor.prototype.CMD_GOTO = function(data) {
 
 PrinceJS.Actor.prototype.CMD_ABOUTFACE = function(data) {
     
+    console.log(this.charName);
     this.charFace *= -1;
     this.scale.x *= -1;
     
@@ -122,14 +123,14 @@ PrinceJS.Actor.prototype.CMD_FRAME = function(data) {
     this.charFrame = data.p1;
     this.updateCharFrame();
     this.processing = false;
-    
+
 };
 
 
 PrinceJS.Actor.prototype.processCommand = function() {
         
     this.processing = true;
-    
+
     while (this.processing) {
         
         var data = this.anims.sequence[this._action][this._seqpointer];
@@ -142,7 +143,6 @@ PrinceJS.Actor.prototype.processCommand = function() {
 };
 
 PrinceJS.Actor.prototype.updateCharPosition = function() {
-     
     this.frameName = this.charName + '-' + this.charFrame;
     
     var tempx = this.charX + (this.charFdx * this.charFace);

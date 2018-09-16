@@ -28,7 +28,15 @@ PrinceJS.Game.prototype = {
         for ( var i = 0; i < json.guards.length ; i++ ) {
 
             var ginfo = json.guards[i];
-            var guard = new PrinceJS.Enemy(this.game, this.level, ginfo.location, ginfo.direction, ginfo.room, ginfo.skill, ginfo.type);
+            var guard = new PrinceJS.Enemy(
+                this.game,
+                this.level,
+                ginfo.location,
+                ginfo.direction,
+                ginfo.room,
+                ginfo.skill,
+                ginfo.type
+            );
             this.guards.push(guard);
 
         }
@@ -36,12 +44,26 @@ PrinceJS.Game.prototype = {
         json.prince.room = 2;
         json.prince.location = 19;
         
-        this.kid = new PrinceJS.Kid(this.game,this.level,json.prince.location,json.prince.direction,json.prince.room);
-        
+        this.kid = new PrinceJS.Kid(
+            this.game,
+            this.level,
+            json.prince.location,
+            json.prince.direction,
+            json.prince.room
+        );
+
+        this.marley = new PrinceJS.Marley(
+            this.game,
+            this.level,
+            json.prince.location,
+            json.prince.direction,
+            json.prince.room
+        );
+        this.kid.marley = this.marley;
+
         this.kid.onChangeRoom.add(this.setupCamera, this);
         this.kid.onChangeRoom.add(this.checkForOpponent, this);
         this.kid.onNextLevel.add(this.nextLevel, this);
-        
         
         this.setupCamera(json.prince.room);
         
@@ -80,6 +102,7 @@ PrinceJS.Game.prototype = {
             this.guards[i].updateActor();
             
         }
+        this.marley.updateActor();
         this.ui.updateUI();
         
     },
