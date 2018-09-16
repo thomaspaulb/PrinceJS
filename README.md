@@ -3,6 +3,7 @@
 ## About Marley Of Persia
 
 Marley of Persia is PrinceJS but with a picture of our cute Marley.
+
 Live on: [princemarley.nl](https://princemarley.nl)
 
 ## About PrinceJS
@@ -11,4 +12,5 @@ Live on: [princemarley.nl](https://princemarley.nl)
 
 ## Credits
 Jordan Mechner for written the original Apple II version and release the source code
+
 UltraBolido: PrinceJS
