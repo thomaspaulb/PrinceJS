@@ -33,7 +33,6 @@
     <script src="src/tiles/Potion.js"></script>
     <script src="src/tiles/Sword.js"></script>
     <script src="src/tiles/Chopper.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tooltip-js@3.0.0/dist/tooltip-min.js"></script>
     <style>
         body {
             background: url(img/marley.jpg) no-repeat center center fixed; 
@@ -53,36 +52,33 @@
         }
         #gameContainer {
             position: absolute;
-            top: 30px;
+            top: 100px;
             left: 30px;
         }
         #controls {
             position: absolute;
-            bottom: 50px;
+            bottom: 20px;
             left: 30px;
             width: 640px;
             text-align: center;
             color: white;
         }
-        #help {
+        #logo {
             position: absolute;
-            bottom: 30px;
+            top: 20px;
             left: 30px;
-            width: 20px;
-            height: 20px;
-            text-align: center;
-            color: white;
-            font-weight: bold;
-            font-size: 30px;         
+            width: 640px;
         }
     </style>
 </head>
 <body>
     <div id="gameContainer"></div>
+    <img id="logo" src="img/logo.png" />
     <div id="controls">
         <span>Lopen: Pijltje links/rechts<span><br/>
         <span>Springen of Verdedigen: Pijltje omhoog<span><br/>
         <span>Bukken of Wapen weg: Pijltje naar beneden<span><br/>
+        <span>Roep Marley: Pijltje naar beneden<span><br/>
         <span>Steken: Shift<span><br/>
         <span>Level opnieuw: R van Restart<span><br/>
     </div>
